@@ -23,4 +23,11 @@ class MainActivity : AppCompatActivity() {
         webView.settings.javaScriptEnabled = true
         webView.loadUrl(DEFAULT_URL)
     }
+
+    override fun onBackPressed() {
+        if (webView.canGoBack())
+            webView.goBack()
+        else
+            super.onBackPressed()
+    }
 }
